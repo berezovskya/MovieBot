@@ -1,9 +1,9 @@
-'use strict';
+﻿'use strict';
 
 
 const functions = require('firebase-functions'); // Cloud Functions for Firebase library
 const DialogflowApp = require('actions-on-google').DialogflowApp; // Google Assistant helper library
-const imdb = require("imdb-api/lib/imdb.js");
+//const imdb = require("imdb-api/lib");
 
 const googleAssistantRequest = 'google'; // Constant to identify Google Assistant requests
 
@@ -25,8 +25,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
   const app = new DialogflowApp({request: request, response: response});
 
     function getMovieInfo(){
-		var data = imdb.get('The Toxic Avenger', {apiKey: "foo"}, testResults)
-        sendResponse("Конечно, сейчас найдем информацию о " +String(data));
+		//var data = imdb.get('The Toxic Avenger', {apiKey: "foo"}, testResults)
+        sendResponse("Конечно, сейчас найдем информацию об этом фильме!");
     }
 
   // Create handlers for Dialogflow actions as well as a 'default' handler
@@ -142,7 +142,7 @@ const googleRichResponse = app.buildRichResponse()
     // Create a basic card and add it to the rich response
   .addBasicCard(app.buildBasicCard(`This is a basic card.  Text in a
  basic card can include "quotes" and most other unicode characters
- including emoji 📱.  Basic cards also support some markdown
+ including emoji ??.  Basic cards also support some markdown
  formatting like *emphasis* or _italics_, **strong** or __bold__,
  and ***bold itallic*** or ___strong emphasis___ as well as other things
  like line  \nbreaks`) // Note the two spaces before '\n' required for a
@@ -153,7 +153,7 @@ const googleRichResponse = app.buildRichResponse()
     .setImage('https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png',
       'Image alternate text'))
   .addSimpleResponse({ speech: 'This is another simple response',
-    displayText: 'This is the another simple response 💁' });
+    displayText: 'This is the another simple response ??' });
 
 // Rich responses for both Slack and Facebook
 const richResponses = {
@@ -163,7 +163,7 @@ const richResponses = {
       {
         'title': 'Title: this is a title',
         'title_link': 'https://assistant.google.com/',
-        'text': 'This is an attachment.  Text in attachments can include \'quotes\' and most other unicode characters including emoji 📱.  Attachments also upport line\nbreaks.',
+        'text': 'This is an attachment.  Text in attachments can include \'quotes\' and most other unicode characters including emoji ??.  Attachments also upport line\nbreaks.',
         'image_url': 'https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png',
         'fallback': 'This is a fallback.'
       }
