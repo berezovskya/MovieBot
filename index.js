@@ -28,6 +28,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 		//var data = imdb.get('The Toxic Avenger', {apiKey: "foo"}, testResults)
         sendResponse("Конечно, сейчас найдем информацию об этом фильме!");
     }
+	
+	function functionMargosha(){
+		sendResponse("Вы попали в секретный раздел Маргоши!");
+	}
 
   // Create handlers for Dialogflow actions as well as a 'default' handler
   const actionHandlers = {
