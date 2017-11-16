@@ -30,7 +30,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     }
 	
 	function functionMargosha(){
-		sendResponse("Вы попали в секретный раздел Маргоши!");
+		sendResponse("Вы попали в секретный раздел Маргариты!");
 	}
 
   // Create handlers for Dialogflow actions as well as a 'default' handler
